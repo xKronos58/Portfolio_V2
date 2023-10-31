@@ -11,12 +11,16 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
 }
 
+:root {
+  --text: #2B2B2B;
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -261,3 +265,87 @@ textarea {
   }
 }
 
+.content {
+  width: 100vw;
+  height: 100vh;
+  overflow: clip;
+}
+
+.background {
+  -webkit-overflow-scrolling: auto;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 6px;
+  left: 6px;
+  z-index: -1;
+  overflow: clip;
+}
+
+.landingText {
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 129.523%; /* 124.342px */
+  letter-spacing: 12px;
+}
+
+.name {
+  width: 1041px;
+  height: 326px;
+  transform: rotate(-90deg);
+  position: absolute;
+  left: -350px;
+  padding-top: 10px;
+  font-size: 96px;
+}
+
+.designer {
+  width: 570px;
+  height: 241px;
+  flex-shrink: 0;
+  padding-top: 488px;
+  padding-left: 381px;
+  font-size: 128px;
+}
+
+.detailLine {
+  width: 183%;
+  height: 1px;
+  background: black;
+  transform: rotate(29.4deg);
+  position: absolute;
+  top: 350px;
+  left: -900px;
+  overflow: clip;
+}
+
+.dot {
+  width: 52.625rem;
+  height: 52.625rem;
+  border-radius: 50%;
+  background: linear-gradient(123deg, rgba(231, 233, 171, 0.50) 14.94%, rgba(189, 125, 190, 0.50) 88.74%);
+  box-shadow: 10px 10px 30px 0 #E2C9DD, -10px -10px 30px 0 #F2F1D5;
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  display: flow;
+  position: absolute;
+  top: 3.63rem;
+  left: 25.7rem;
+}
+
+.fullstack {
+  width: 35.5rem;
+  height: 13.8125rem;
+  position: absolute;
+  top: -0rem;
+  flex-shrink: 0;
+  color: var(--text);
+  text-align: right;
+  font-size: 8rem;
+  font-style: normal;
+  line-height: 129.523%; /* 10.36181rem */
+  letter-spacing: 0.96rem;
+  left: 45%;
+}
