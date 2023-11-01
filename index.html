@@ -3,18 +3,20 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Finley Crowther</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
+  <meta property="og:title" content="Hello There">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" href="favicon.png">
+
+  <script src="js/main.js"></script>
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
@@ -24,14 +26,103 @@
 
 <body>
 <div class="content">
-  <img class="light background" src="img/dotBackgroundLight.png" alt="Background"/>
-  <h1 class="name landingText">FINLEY        CROWTHER</h1>
-  <h1 class="designer landingText">DES- IGNER</h1>
-  <h1 class="fullstack landingText">FULL STACK</h1>
+  <section class="section1">
+  <img class="logo" id="logo" src="img/LogoLight.png" alt="Logo"/>
+  <img class="light background" id="bg" src="img/dbgl.png" alt="Background"/>
+  <h1 class="name landingText" id="landingText">FINLEY        CROWTHER</h1>
+  <h1 class="designer landingText" id="landingText2">DES- IGNER</h1>
+  <h1 class="fullstack landingText" id="landingText3">FULL STACK</h1>
   <hr class="detailLine"/>
-  <span class="dot"></span>
+  <img class="dmBtn" onclick="darkmode()" src="img/DarkMode.png" alt="Dark Mode Button" id="dmBtn"/>
+  <span class="dot" id="dot"></span>
+  <img class="menu" id="menu" src="img/LightMenu.png" alt="menu" onclick="openMenu()">
+  </section>
+  <section class="section2">
+    <h1 class="landingText sideTextLanding">ABOUT ME</h1>
+  </section>
+  <section class="section3">
+    <h1 class="landingText sideTextLanding">PROJECTS</h1>
+  </section>
 </div>
 
+<div class="menu-box" id="menu-box">
+  <ul>
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="About.html">ABOUT</a></li>
+    <li><a href="Portfolio.html">PORTFOLIO</a></li>
+    <li><a href="Contact.html">CONTACT</a></li>
+    <li><a href="Hire.html">HIRE</a></li>
+    <li><a href="help.html">HELP</a></li>
+  </ul>
+</div>
+
+<script>
+  let darkModeVar = false;
+
+  let menuBox = document.getElementById("menu-box");
+  let menuIcon = document.getElementById("menu");
+  let icon = document.getElementById("logo")
+
+  function openMenu(){
+    menuBox.classList.toggle("open-menu")
+
+    if(menuBox.classList.contains("open-menu")) {
+      if (darkModeVar === false){
+        menuIcon.src = './img/DarkClose.png';
+        icon.src = './img/LogoDark.png';
+      } else {
+        menuIcon.src = './img/LightClose.png';
+        icon.src = './img/LogoLight.png';
+      }
+    } else {
+      if(darkModeVar === false){
+        menuIcon.src = './img/LightMenu.png';
+        icon.src = './img/LogoLight.png';
+      } else {
+        menuIcon.src = './img/DarkMenu.png';
+        icon.src = './img/LogoDark.png';
+      }
+    }
+  }
+
+
+
+  const bg = document.getElementById("bg");
+  const center = document.getElementById("dot")
+  const text = document.getElementById("landingText");
+  const text2 = document.getElementById("landingText2");
+  const text3 = document.getElementById("landingText3");
+  const logo = document.getElementById("logo");
+  const dmBtn = document.getElementById("dmBtn");
+  const menu = document.getElementById("menu");
+  function darkmode() {
+    if(darkModeVar === false) {
+      bg.src = './img/dbgd.png';
+      center.style.background = "var(--darkCircle)";
+      center.style.boxShadow = "var(--darkShadow)";
+      text.style.color = "var(--darkText)";
+      text2.style.color = "var(--darkText)";
+      text3.style.color = "var(--darkText)";
+      logo.src = './img/LogoDark.png';
+      dmBtn.src = './img/LightMode.png';
+      menu.src = './img/DarkMenu.png';
+
+      darkModeVar = true;
+    } else {
+      bg.src = './img/dbgl.png';
+      center.style.background = "var(--ligtCircle)";
+      center.style.boxShadow = "var(--lightShadow)";
+      text.style.color = "var(--lightText)";
+      text2.style.color = "var(--lightText)";
+      text3.style.color = "var(--lightText)";
+      logo.src = './img/LogoLight.png';
+      dmBtn.src = './img/DarkMode.png';
+      menu.src = './img/LightMenu.png';
+
+      darkModeVar = false;
+    }
+  }
+</script>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
